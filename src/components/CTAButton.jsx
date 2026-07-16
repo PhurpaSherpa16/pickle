@@ -1,7 +1,7 @@
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
-export default function CTAButton({label='Order Now', link='/', 
+export default function CTAButton({label='Order Now', link='/products', 
     className='bg-(--orange) border-(--orange)', span='group-hover:text-(--orange)', className2='bg-white', className3='text-(--orange)'}) {
   return (
     <Link to={link} className={` py-3 pl-6 pr-4 2xl:py-4 2xl:pl-8 2xl:pr-4 rounded-full text-(--white) 
