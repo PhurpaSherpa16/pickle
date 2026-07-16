@@ -6,10 +6,10 @@ export default function Hero() {
         {/* background image */}
         <div className='relative'>
             <div className='absolute inset-0 bg-black/60 md:bg-black/60 md:backdrop-blur-[3px] h-screen w-screen z-20 md:z-0'/>
-            <img src="/pickle_background.png" alt="background image" 
+            <img src={siteData.HeroBackground} alt="background image" 
             className='h-screen w-screen object-cover object-center'/>
             <div className='absolute bottom-10 -left-14 md:left-30 2xl:left-50'>
-                <img src="/chicken_achar.png" alt="background image" 
+                <img src={siteData.HeroImage} alt="background image" 
                 className='h-fit md:h-130 2xl:h-150 w-fit object-cover object-center 
                 filter brightness-[0.7] saturate-70
                 relative z-10'/>
@@ -21,7 +21,7 @@ export default function Hero() {
         </div>
 
         {/* content */}
-        <div className='absolute z-20 inset-0 mainDiv'>
+        <div className='absolute z-20 w-screen inset-0 mainDiv'>
             <div className='relative top-40 md:top-80 lg:top-40 2xl:top-50 space-y-8'>
                 <div className='space-y-4'>
                     <h1 className='font-[veldman] text-center md:text-right uppercase 
@@ -44,7 +44,7 @@ export default function Hero() {
         </div>
 
         {/* wave and price */}
-        <div className='absolute -bottom-36 md:-bottom-34 2xl:-bottom-48'>
+        <div className='absolute -bottom-36 md:-bottom-34 2xl:-bottom-48 w-screen'>
             <img src='/hero_wave.svg' alt="background" className="relative w-full h-60 2xl:h-80 bottom-5 z-20 md:z-0"/>
             <div className='bg-(--white) rounded-full size-32 2xl:size-40 border border-(--white)/30 
                     absolute
@@ -63,4 +63,10 @@ export default function Hero() {
         </div>
     </div>
   )
+}
+
+
+const siteData = {
+    HeroBackground :'https://ik.imagekit.io/k05httq0p/Pickle/pickle_background.png',
+    HeroImage : 'https://ik.imagekit.io/k05httq0p/Pickle/chicken_achar.png'
 }
