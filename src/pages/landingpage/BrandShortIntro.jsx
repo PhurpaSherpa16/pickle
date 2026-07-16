@@ -15,7 +15,7 @@ export default function BrandShortIntro() {
             </div>
             <div className='relative'>
                 <div className='mainDiv flex items-center justify-center w-full relative z-40 -space-x-16'>
-                    <Image source='/achar_pack.png' className='md:w-200 md:h-160 2xl:w-248 2xl:h-200 relative z-10 filter brightness-90'/>
+                    <Image source='https://ik.imagekit.io/k05httq0p/Pickle/achar_pack.png' className='md:w-200 md:h-160 2xl:w-248 2xl:h-200 relative z-10 filter brightness-90'/>
                 </div>
                 <div className='absolute top-30 left-0 w-full h-full'>
                         <img src="/chilli1.png" alt="chilli" className='absolute -top-48 left-10 blur-[5px] size-24 -rotate-95 filter brightness-90'/>

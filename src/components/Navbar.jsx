@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { FaShoppingCart, FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 import { IoMdMail } from 'react-icons/io'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -10,6 +10,7 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true)
   const [isOpen, setIsOpen] = useState(false)
   const lastScrollY = useRef(0)
+  const location = useLocation()
 
   const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
@@ -85,7 +86,7 @@ export default function Navbar() {
                       <img src="/largelogo.png" alt="logo" className='size-8 object-cover object-center'/>
                       <p className='uppercase font-black text-(--orange)'>Pickle</p>
                   </Link>
-                  {!isMobile &&
+                  {!isMobile && location === '/' &&
                     <div className='flex items-center gap-16'>
                         {
                             MenuList.map((item, index)=>(
@@ -193,7 +194,7 @@ export default function Navbar() {
 }
 
 const MenuList = [
-    {name:"Product",path:"/product"},
+    {name:"Product",path:"/products"},
     {name:"About",path:"/about"},
     {name:"Contact",path:"/contact"},
 ]

@@ -136,7 +136,7 @@ export default function Testimonials() {
   const activeTestimonial = testimonialsData[activeIndex]
 
   return (
-    <div className={`min-h-screen w-screen relative z-10 transition-colors duration-500`}>
+    <div className={`min-h-screen w-screen relative z-10 transition-colors duration-500 pb-12`}>
         <div className='mainDiv py-8 md:py-8 pt-16 space-y-16 md:space-y-32 relative z-40'>
             <div className='space-y-4 flex flex-col items-center justify-center'>
                 <h1 className={`font-medium transition-colors duration-500 text-(--dark_orange)

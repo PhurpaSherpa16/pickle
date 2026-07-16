@@ -2,9 +2,34 @@ import React, { useState } from 'react'
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { motion, AnimatePresence } from 'motion/react';
 import CTAButton from '../../components/CTAButton';
+import { productsData } from '../../data/products';
+import { Link } from 'react-router-dom';
+
+// Dynamic theme mapper based on product categories and names
+const getProductTheme = (product) => {
+    if (product.category === 'Meat') {
+        return product.name.toLowerCase().includes('pork') ? 'red' : 'orange';
+    }
+    if (product.category === 'Chili' || product.name.toLowerCase().includes('timur')) {
+        return 'red';
+    }
+    if (product.category === 'Vegetable' || product.category === 'Fruit') {
+        return 'green';
+    }
+    return 'orange';
+}
+
+// Extract and prepare the top 5 rating products
+const productList = [...productsData]
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 5)
+    .map(product => ({
+        ...product,
+        theme: getProductTheme(product)
+    }));
 
 export default function Products() {
-    const [activeIndex, setActiveIndex] = useState(1) // Starts with Radish Pickle as active
+    const [activeIndex, setActiveIndex] = useState(0) // Start at index 0
 
     const len = productList.length
     const prevIndex = (activeIndex - 1 + len) % len
@@ -79,7 +104,7 @@ export default function Products() {
                                         }}
                                     >
                                         <ProductCard 
-                                            src={product.images || '/radish.png'} 
+                                            src={product.images ? product.images[0] : '/radish.png'} 
                                             active={active}
                                         />
                                     </motion.div>
@@ -112,16 +137,17 @@ export default function Products() {
                             <div className='space-y-8 w-full md:w-xl'>
                                 <div className='space-y-2'>
                                     <h2 className={`transition-colors duration-500 ${themeText} text-2xl lg:text-[clamp(1rem,2vw,2rem)] text-left font-bold
-                                    uppercase tracking-wide`}>{activeProduct.title}</h2>
+                                    uppercase tracking-wide`}>{activeProduct.name}</h2>
                                     <p className={`transition-colors duration-500 ${themeText} md:w-lg text-xl lg:text-[clamp(0.875rem,1vw+0.5rem,1rem)] text-left font-light`}>{activeProduct.description}</p>
                                 </div>
                                 <p className={`transition-colors duration-500 ${themeText} text-2xl lg:text-[clamp(1rem,2vw,2rem)] font-bold text-left`}>
-                                    {activeProduct.price} / {activeProduct.weight}
+                                    Rs. {activeProduct.price} / {activeProduct.size}{activeProduct.unit}
                                 </p>
                             </div>
                             <div className='space-y-4 w-full md:w-fit flex items-start md:items-end'>
                                 <CTAButton 
-                                    label="Add to Cart" 
+                                    link={`/product/${activeProduct.id}`}
+                                    label="View This Product" 
                                     className={`${themeBgBtn}`}
                                     span={`${themeTextHoverBtn}`} 
                                     className3={`${themeTextArrowBtn}`}
@@ -130,6 +156,10 @@ export default function Products() {
                         </div>
                     </motion.div>
                 </div>
+
+            </div>
+            <div className='mainDiv flex items-center justify-center text-(--orange) pb-16'>
+                <Link to='/products' className='hover:scale-102 transition-all duration-300 hover:underline'>View All Products</Link>
             </div>
         </div>
     )
@@ -138,7 +168,7 @@ export default function Products() {
 const ProductCard = ({src, active}) => {
     return (
         <div className='h-60 md:h-120 w-fit relative flex items-center'>
-            <img src={src} alt="radish ko achar" className={`${active ? 'scale-200 md:scale-100 md:h-full':'md:h-40 blur-[3px]'} md:w-fit mx-auto object-cover rounded-2xl relative z-20 transition-all duration-300`}/>
+            <img src={src} alt="pickle" className={`${active ? 'scale-200 md:scale-100 md:h-full':'md:h-40 blur-[3px]'} md:w-fit mx-auto object-cover rounded-2xl relative z-20 transition-all duration-300`}/>
             {active && 
             <div className='hidden md:block'>
                 <div className='bg-black z-10 h-16 w-60 2xl:w-70 rounded-full absolute bottom-16 -left-10  md:bottom-0 md:left-1/2 md:-translate-x-1/3 blur-2xl'/>
@@ -148,66 +178,3 @@ const ProductCard = ({src, active}) => {
         </div>
     )
 }
-
-const productList = [
-    {
-        id: 1,
-        theme: 'orange',
-        title: "Chicken Achar",
-        description:
-            "Traditional Nepali chicken pickle made with tender chicken pieces, aromatic spices, mustard oil, and authentic Himalayan flavors.",
-        images: "chicken_achar.png",
-        price: "Rs. 650",
-        weight: "500g",
-        ingredients:
-            ['Chicken', 'mustard oil', 'garlic', 'ginger', 'sesame seeds', 'timur', 'chili powder', 'turmeric', 'salt', 'fenugreek', 'mixed spices'],
-    },
-    {
-        id: 2,
-        theme: 'green',
-        title: "Mula ko Achar (Radish Pickle)",
-        description:
-            "A classic Nepali radish pickle prepared with fresh radish, sesame, timur, mustard oil, and traditional homemade spices.",
-        images: "radish.png",
-        price: "Rs. 300",
-        weight: "500g",
-        ingredients:
-            ['Fresh radish', 'mustard oil', 'sesame seeds', 'garlic', 'ginger', 'timur', 'chili powder', 'turmeric', 'salt', 'lemon juice'],
-    },
-    {
-        id: 3,
-        theme: 'red',
-        title: "Timur ko Chop",
-        description:
-            "Spicy and tangy Nepali timur snack bursting with the signature citrus aroma of Sichuan pepper and traditional seasonings.",
-        images: "timur.png",
-        price: "Rs. 250",
-        weight: "250g",
-        ingredients:
-            ['Timur (Sichuan pepper)', 'chili flakes', 'garlic', 'mustard oil', 'salt', 'lemon juice', 'mixed spices'],
-    },
-    {
-        id: 4,
-        theme: 'orange',
-        title: "Buff Achar",
-        description:
-            "Authentic buffalo meat pickle slow-cooked with traditional Nepali herbs and spices for a rich, smoky flavor.",
-        images: "buff.png",
-        price: "Rs. 700",
-        weight: "500g",
-        ingredients:
-            ['Buff meat', 'mustard oil', 'garlic', 'ginger', 'sesame seeds', 'timur', 'chili powder', 'turmeric', 'fenugreek', 'salt', 'mixed spices']
-    },
-    {
-        id: 5,
-        theme: 'red',
-        title: "Pork Achar",
-        description:
-            "Premium pork pickle made with juicy pork, mustard oil, and a bold blend of Nepali spices for a delicious homemade taste.",
-        images: "buff.png",
-        price: "Rs. 750",
-        weight: "500g",
-        ingredients:
-            ['Pork', 'mustard oil', 'garlic', 'ginger', 'sesame seeds', 'timur', 'chili powder', 'turmeric', 'fenugreek', 'salt', 'mixed spices'],
-    },
-]

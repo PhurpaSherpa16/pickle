@@ -9,7 +9,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <div className='min-h-[40vh] w-screen relative bg-(--orange) mt-16 2xl:mt-24'>
+    <div className='min-h-[40vh] w-screen relative bg-(--orange) 2xl:mt-24'>
         <div className='mainDiv py-16 md:py-24 space-y-16 md:space-y-24 relative z-20'>
             <div className='flex flex-col md:flex-row justify-between space-y-8'>
                 {/* left */}

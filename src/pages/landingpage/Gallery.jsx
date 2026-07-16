@@ -1,5 +1,3 @@
-import React from 'react'
-import CTAButton from '../../components/CTAButton'
 
 export default function Gallery() {
   return (
