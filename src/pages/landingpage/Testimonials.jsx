@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Review } from './Introduction'
 import { BiSolidQuoteLeft } from 'react-icons/bi'
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion } from 'motion/react'
+import { useMediaQuery } from 'react-responsive'
 
 const testimonialsData = [
   {
     id: "01",
-    image: "/g1.jpg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video1.mp4",
+    type: "video",
     name: "Ankur Joshi",
     location: "Kathmandu",
     rating: 4,
@@ -16,7 +18,8 @@ const testimonialsData = [
   },
   {
     id: "02",
-    image: "/g2.jpeg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video4.mp4",
+    type: "video",
     name: "Priya Shrestha",
     location: "Lalitpur",
     rating: 5,
@@ -25,7 +28,8 @@ const testimonialsData = [
   },
   {
     id: "03",
-    image: "/g3.jpeg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
+    type: "video",
     name: "Ramesh Gurung",
     location: "Pokhara",
     rating: 5,
@@ -34,7 +38,8 @@ const testimonialsData = [
   },
   {
     id: "04",
-    image: "/g4.jpeg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video1.mp4",
+    type: "video",
     name: "Sujata Rai",
     location: "Dharan",
     rating: 4,
@@ -43,7 +48,8 @@ const testimonialsData = [
   },
   {
     id: "05",
-    image: "/g5.jpeg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video3.mp4",
+    type: "video",
     name: "Bikash Tamang",
     location: "Bhaktapur",
     rating: 5,
@@ -52,7 +58,8 @@ const testimonialsData = [
   },
   {
     id: "06",
-    image: "/g5.png",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video2.mp4",
+    type: "video",
     name: "Hem Gurnng",
     location: "Butwal",
     rating: 5,
@@ -61,7 +68,8 @@ const testimonialsData = [
   },
   {
     id: "07",
-    image: "/g7.jpg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
+    type: "video",
     name: "Sandeep Adhikari",
     location: "Chitwan",
     rating: 4,
@@ -70,7 +78,8 @@ const testimonialsData = [
   },
   {
     id: "08",
-    image: "/g8.jpg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video1.mp4",
+    type: "video",
     name: "Mina Lama",
     location: "Hetauda",
     rating: 5,
@@ -79,7 +88,8 @@ const testimonialsData = [
   },
   {
     id: "09",
-    image: "/image1.jpeg",
+    file: "/image1.jpeg",
+    type: "image",
     name: "Roshan KC",
     location: "Biratnagar",
     rating: 4,
@@ -88,7 +98,8 @@ const testimonialsData = [
   },
   {
     id: "10",
-    image: "/image2.webp",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video4.mp4",
+    type: "video",
     name: "Sabina Thapa",
     location: "Nepalgunj",
     rating: 5,
@@ -101,6 +112,8 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(2) // Default to index 2 (Ramesh Gurung)
 
   const len = testimonialsData.length
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
+
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev - 1 + len) % len)
@@ -134,8 +147,9 @@ export default function Testimonials() {
                         setActiveIndex={setActiveIndex} 
                         handleNext={handleNext} 
                         handlePrev={handlePrev} 
+                        isMobile={isMobile}
                     />
-                    <div className='flex items-center justify-center gap-120 2xl:gap-160 relative -top-4 2xl:top-10 z-20'>
+                    <div className='flex items-center justify-center gap-16 md:gap-120 2xl:gap-160 relative top-8 md:-top-4 2xl:top-10 z-40'>
                         <motion.button whileHover={{scale:0.9}} whileTap={{scale: 1}} onClick={handlePrev}
                             className={`p-1 flex items-center justify-center rounded-full bg-(--dark_orange) 
                             transition-colors duration-500 text-(--offWhite) cursor-pointer`}>
@@ -158,11 +172,22 @@ export default function Testimonials() {
                     className='flex flex-col items-center gap-8 mt-8'
                 >
                     <div className='flex items-center gap-4'>
-                        <img 
-                            src={activeTestimonial.image} 
-                            alt={activeTestimonial.name} 
-                            className='size-12 rounded-full object-cover filter grayscale-100'
-                        />
+                        {activeTestimonial.type === 'video' ? (
+                          <video 
+                              src={activeTestimonial.file} 
+                              className='size-12 rounded-full object-cover filter grayscale-100'
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                          />
+                        ) : (
+                          <img 
+                              src={activeTestimonial.file} 
+                              alt={activeTestimonial.name} 
+                              className='size-12 rounded-full object-cover filter grayscale-100'
+                          />
+                        )}
                         <div className='flex flex-col space-y-2'>
                             <div>
                                 <h3 className='font-medium text-(--dark_orange) text-sm'>{activeTestimonial.name}</h3>
@@ -184,7 +209,66 @@ export default function Testimonials() {
   )
 }
 
-const TestimonialCarousel = ({ activeIndex, setActiveIndex, handleNext, handlePrev }) => {
+const VideoCard = ({ testimonial, offset, isVisible, getCardStyles, handleNext, handlePrev, setActiveIndex, idx }) => {
+  const videoRef = useRef(null)
+  const isActive = offset === 0
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isActive) {
+        videoRef.current.play().catch(err => {
+          console.log("Playback interrupted or blocked: ", err)
+        })
+      } else {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+      }
+    }
+  }, [isActive])
+
+  return (
+    <motion.video
+      ref={videoRef}
+      key={testimonial.id}
+      src={testimonial.file}
+      initial={false}
+      animate={getCardStyles(offset)}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 30
+      }}
+      drag={isActive ? "x" : false}
+      dragConstraints={{ left: 0, right: 0 }}
+      dragElastic={0.2}
+      onDragEnd={(e, info) => {
+        const swipeThreshold = 50
+        if (info.offset.x < -swipeThreshold) {
+          handleNext()
+        } else if (info.offset.x > swipeThreshold) {
+          handlePrev()
+        }
+      }}
+      onClick={() => {
+        if (!isActive) {
+          setActiveIndex(idx)
+        }
+      }}
+      className={`hover:cursor-grab absolute h-80 w-80 md:h-120 md:w-90 2xl:h-140 2xl:w-120 border-4 border-(--white) object-cover object-center transition-shadow duration-500
+        ${isActive ? 'shadow-xl cursor-default' : 'shadow-lg cursor-pointer'}
+      `}
+      style={{
+        zIndex: isActive ? 30 : Math.abs(offset) === 1 ? 20 : 10,
+        pointerEvents: isVisible ? 'auto' : 'none'
+      }}
+      loop
+      muted
+      playsInline
+    />
+  )
+}
+
+const TestimonialCarousel = ({ activeIndex, setActiveIndex, handleNext, handlePrev, isMobile }) => {
   const len = testimonialsData.length
   const [is2Xl, setIs2Xl] = useState(false)
 
@@ -216,7 +300,7 @@ const TestimonialCarousel = ({ activeIndex, setActiveIndex, handleNext, handlePr
         x: -xOffset,
         y: yOffsetNear,
         scale: 0.9,
-        opacity: 0.8,
+        opacity: 1,
         filter: 'grayscale(50%)'
       }
     }
@@ -225,7 +309,7 @@ const TestimonialCarousel = ({ activeIndex, setActiveIndex, handleNext, handlePr
         x: xOffset,
         y: yOffsetNear,
         scale: 0.9,
-        opacity: 0.8,
+        opacity: 1,
         filter: 'grayscale(50%)'
       }
     }
@@ -257,52 +341,73 @@ const TestimonialCarousel = ({ activeIndex, setActiveIndex, handleNext, handlePr
   }
 
   return (
-    <div className='relative overflow-visible pt-16 md:pt-0 lg:pt-16 md:py-12'>
+    <div className='relative overflow-visible pt-24 pb-16 md:pt-0 lg:pt-16 md:py-12'>
       <div className='flex items-center justify-center relative h-40 md:h-120 2xl:h-140 w-full max-w-5xl 2xl:max-w-7xl mx-auto overflow-visible'>
         {testimonialsData.map((testimonial, idx) => {
           let offset = idx - activeIndex
           if (offset < -len / 2) offset += len
           if (offset > len / 2) offset -= len
 
+          if (isMobile && offset !== 0) {
+            return null
+          }
+
           const isVisible = Math.abs(offset) <= 2
 
-          return (
-            <motion.img
-              key={testimonial.id}
-              src={testimonial.image}
-              alt={testimonial.name}
-              initial={false}
-              animate={getCardStyles(offset)}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30
-              }}
-              drag={offset === 0 ? "x" : false}
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
-              onDragEnd={(e, info) => {
-                const swipeThreshold = 50;
-                if (info.offset.x < -swipeThreshold) {
-                  handleNext();
-                } else if (info.offset.x > swipeThreshold) {
-                  handlePrev();
-                }
-              }}
-              onClick={() => {
-                if (offset !== 0) {
-                  setActiveIndex(idx)
-                }
-              }}
-              className={`hover:cursor-grab absolute h-60 w-80 md:h-120 md:w-90 2xl:h-140 2xl:w-120 border-4 border-(--white) object-cover object-center rounded-2xl transition-shadow duration-500
-                ${offset === 0 ? 'shadow-xl cursor-default' : 'shadow-lg cursor-pointer'}
-              `}
-              style={{
-                zIndex: offset === 0 ? 30 : Math.abs(offset) === 1 ? 20 : 10,
-                pointerEvents: isVisible ? 'auto' : 'none'
-              }}
-            />
-          )
+          if (testimonial.type === 'video') {
+            return (
+              <VideoCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                offset={offset}
+                isVisible={isVisible}
+                getCardStyles={getCardStyles}
+                handleNext={handleNext}
+                handlePrev={handlePrev}
+                setActiveIndex={setActiveIndex}
+                idx={idx}
+              />
+            )
+          } else {
+            return (
+              <motion.img
+                key={testimonial.id}
+                src={testimonial.file}
+                alt={testimonial.name}
+                initial={false}
+                animate={getCardStyles(offset)}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30
+                }}
+                drag={offset === 0 ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(e, info) => {
+                  const swipeThreshold = 50;
+                  if (info.offset.x < -swipeThreshold) {
+                    handleNext();
+                  } else if (info.offset.x > swipeThreshold) {
+                    handlePrev();
+                  }
+                }}
+                onClick={() => {
+                  if (offset !== 0) {
+                    setActiveIndex(idx)
+                  }
+                }}
+                className={`hover:cursor-grab absolute h-80 w-80 md:h-120 md:w-90 2xl:h-140 2xl:w-120 border-4 border-(--white) 
+                  object-cover object-center rounded-2xl transition-shadow duration-500
+                  ${offset === 0 ? 'shadow-xl cursor-default' : 'shadow-lg cursor-pointer'}
+                `}
+                style={{
+                  zIndex: offset === 0 ? 30 : Math.abs(offset) === 1 ? 20 : 10,
+                  pointerEvents: isVisible ? 'auto' : 'none'
+                }}
+              />
+            )
+          }
         })}
       </div>
     </div>

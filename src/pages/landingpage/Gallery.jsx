@@ -4,7 +4,7 @@ import CTAButton from '../../components/CTAButton'
 export default function Gallery() {
   return (
     <div className='min-h-screen w-screen relative bg-(--offWhite) bottom-12'>
-        <div className='mainDiv py-16 md:py-32 space-y-16 md:space-y-24 relative z-40'>
+        <div className='mainDiv py-16 md:py-32 space-y-16 md:space-y-24 relative z-20'>
             <div className='space-y-4 flex flex-col items-center justify-center'>
                 <h1 className={`font-medium transition-colors duration-500 
                     text-[clamp(2rem,4vw,3rem)]! 2xl:text-[clamp(2rem,5vw,4rem)]! 

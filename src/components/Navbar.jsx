@@ -163,7 +163,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 text-(--dark_orange) hover:text-(--orange) transition-colors text-base font-semibold tracking-wide"
                 >
                   <IoMdMail className="size-5 text-(--orange)" />
-                  <span>sales.pickle@gmail.com</span>
+                  <span className='text-(--orange)'>sales.pickle@gmail.com</span>
                 </a>
 
                 <div className="flex items-center gap-8">
