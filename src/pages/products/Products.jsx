@@ -19,7 +19,7 @@ export default function Products() {
 
   return (
     <div className='min-h-screen w-screen bg-(--offWhite)/50'>
-        <div className='mainDiv pt-32 px-4 pb-24'>
+        <div className='mainDiv pt-32 pb-24'>
             {/* Header Section */}
             <div className='space-y-8 mb-12 flex flex-col items-center justify-center'>
                 {/* Category Filters */}

@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 export default function Introduction() {
   return (
     <div className='min-h-fit w-screen relative z-10'>
-        <div className='mainDiv pt-24 pb-32 md:py-32 md:mb-16 space-y-8 md:space-y-12 relative z-40 min-[1440px]:px-0'>
+        <div className='mainDiv pt-24 pb-32 md:py-32 md:mb-16 space-y-8 md:space-y-12 relative z-40'>
             <h1 className='text-center md:text-left text-(--dark_orange) font-medium text-[clamp(2rem,4vw,3rem)]! 2xl:text-[clamp(2rem,5vw,4rem)]!'>You want achar that tastes  
                 <br className='hidden md:block'/>
                 authentic, feels clean, & <br className='hidden md:block'/>
