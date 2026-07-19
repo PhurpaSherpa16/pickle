@@ -31,8 +31,8 @@ export default function Hero() {
 
         {/* content */}
         <div className='absolute z-20 w-screen inset-0 mainDiv min-[1440px]:px-0'>
-            <div className='relative top-40 md:top-80 lg:top-36 
-            2xl:top-50 
+            <div className='relative top-40 md:top-80 lg:top-40 
+            2xl:top-60 
             space-y-8
             xl:space-y-2
             min-[1400px]:space-y-8!

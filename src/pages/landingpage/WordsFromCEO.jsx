@@ -7,7 +7,7 @@ export default function WordsFromCEO() {
     <div className='min-h-fit w-screen relative z-10 bottom-12'>
         <div className='flex h-full items-end md:items-center justify-center'>
             <div className='h-full w-full md:w-1/2'>
-                <img src="https://ik.imagekit.io/k05httq0p/Pickle/ceo.jpg" alt="CEO Image" className='h-screen md:h-[80vh] lg:h-screen w-full object-cover object-center 
+                <img src="https://ik.imagekit.io/k05httq0p/Pickle/g5.png?updatedAt=1784219159096" alt="CEO Image" className='h-screen md:h-[80vh] lg:h-screen w-full object-cover object-center 
                 filter grayscale-100'/>
             </div>
             <div className='bg-(--black)/40 md:bg-transparent backdrop-blur-lg absolute mainDiv h-fit py-32 space-y-12 md:relative z-40 w-full md:w-1/2 flex items-center justify-center'>   
@@ -19,7 +19,7 @@ export default function WordsFromCEO() {
                         dry vegetables on bamboo mats, and 
                         ferment in clay pots buried in cool earth.
                     </p>
-                    <p className='text-xs text-(--white) md:text-(--black)'>- CEO. Manjita Manandhar</p>
+                    <p className='text-xs text-(--white) md:text-(--black)'>- CEO. John Doe</p>
                 </div>
             </div>
         </div>

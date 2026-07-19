@@ -1,21 +1,21 @@
 export const team = [
     {
-        name: 'Manjita Manandhar',
+        name: 'John Doe',
         role: 'Founder & Head Cook',
         img: '/g1.jpg'
     },
     {
-        name: 'Prakash Shrestha',
+        name: 'John Doe',
         role: 'Sourcing & Quality',
         img: '/g2.jpeg'
     },
     {
-        name: 'Sunita Rai',
+        name: 'John Doe',
         role: 'Production Lead',
         img: '/g3.jpeg'
     },
     {
-        name: 'Anil Gurung',
+        name: 'John Doe',
         role: 'Packaging & Dispatch',
         img: '/g4.jpeg'
     },

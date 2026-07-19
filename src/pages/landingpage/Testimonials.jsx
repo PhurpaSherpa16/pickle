@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive'
 const testimonialsData = [
   {
     id: "01",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video1.mp4",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
     type: "video",
     name: "Ankur Joshi",
     location: "Kathmandu",
@@ -19,8 +19,8 @@ const testimonialsData = [
   },
   {
     id: "02",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video4.mp4",
-    type: "video",
+    file: "/g1.jpg",
+    type: "image",
     name: "Priya Shrestha",
     location: "Lalitpur",
     avatar: "/avatar2.png",
@@ -41,8 +41,8 @@ const testimonialsData = [
   },
   {
     id: "04",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video1.mp4",
-    type: "video",
+    file: "/g1.jpg",
+    type: "image",
     name: "Sujata Rai",
     avatar: "/avatar1.png",
     location: "Dharan",
@@ -52,7 +52,7 @@ const testimonialsData = [
   },
   {
     id: "05",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video3.mp4",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
     type: "video",
     name: "Bikash Tamang",
     avatar: "/avatar2.png",
@@ -63,8 +63,8 @@ const testimonialsData = [
   },
   {
     id: "06",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video2.mp4",
-    type: "video",
+    file: "g7.jpg",
+    type: "image",
     name: "Hem Gurnng",
     avatar: "/avatar3.png",
     location: "Butwal",
@@ -85,7 +85,7 @@ const testimonialsData = [
   },
   {
     id: "08",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video1.mp4",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
     type: "video",
     name: "Mina Lama",
     avatar: "/avatar2.png",
