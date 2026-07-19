@@ -1,8 +1,10 @@
 import CTAButton from '../../components/CTAButton'
 
 export default function Hero() {
+
+    console.log(window.innerWidth)
   return (
-    <div className='relative'>
+    <div className='relative '>
         {/* background image */}
         <div className='relative'>
             <div className='absolute inset-0 bg-black/60 md:bg-black/60 md:backdrop-blur-[3px] h-screen w-screen z-20 md:z-0'/>
@@ -10,9 +12,16 @@ export default function Hero() {
             className='h-screen w-screen object-cover object-center'/>
             <div className='absolute bottom-10 -left-14 md:left-30 2xl:left-50'>
                 <img src={siteData.HeroImage} alt="background image" 
-                className='h-fit md:h-130 2xl:h-150 w-fit object-cover object-center 
-                filter brightness-[0.7] saturate-70
-                relative z-10'/>
+                className="
+                    h-fit
+                    md:h-160
+                    xl:h-90
+                    min-[1400px]:h-130!
+                    2xl:h-150
+                    w-fit object-cover object-center
+                    filter brightness-[0.7] saturate-70
+                    relative z-10
+                "/>
                 <div className='hidden md:block bg-black z-10 h-16 w-60 2xl:w-70 rounded-full absolute 
                 bottom-0 left-1/2 -translate-x-1/3 blur-2xl'/>
                 <div className='bg-linear-to-tr from-black to-transparent z-10 h-4 w-70 2xl:w-90 rounded-full absolute 
@@ -21,12 +30,19 @@ export default function Hero() {
         </div>
 
         {/* content */}
-        <div className='absolute z-20 w-screen inset-0 mainDiv'>
-            <div className='relative top-40 md:top-80 lg:top-40 2xl:top-50 space-y-8'>
+        <div className='absolute z-20 w-screen inset-0 mainDiv min-[1440px]:px-0'>
+            <div className='relative top-40 md:top-80 lg:top-36 
+            2xl:top-50 
+            space-y-8
+            xl:space-y-2
+            min-[1400px]:space-y-8!
+            '>
                 <div className='space-y-4'>
                     <h1 className='font-[veldman] text-center md:text-right uppercase 
                     text-[calc(80px+3.5vw)] 
-                    md:text-[calc(160px+3.5vw)] 
+                    md:text-[calc(160px+3.5vw)]
+                    xl:text-[calc(140px+1.5vw)]
+                    min-[1440px]:text-[calc(160px+3.5vw)]!
                     2xl:text-[calc(180px+5vw)] 
                     leading-[0.8] text-(--white)'>CHICKEN 
                     <br />

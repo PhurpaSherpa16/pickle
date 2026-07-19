@@ -81,7 +81,7 @@ export default function Navbar() {
   return (
     <>
       <div className={`fixed w-screen top-0 z-50 h-20 transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} ${isWhiteHeader ? 'bg-(--white) shadow-md' : 'bg-transparent'}`}>
-          <div className='mainDiv flex items-center h-full'>
+          <div className='mainDiv flex items-center h-full min-[1440px]:px-0'>
               <div className='flex items-center justify-between w-full'>
                   <Link to='/' className='flex items-center gap-1.5' onClick={() => setIsOpen(false)}>
                       <img src="/largelogo.png" alt="logo" className='size-8 object-cover object-center'/>

@@ -8,7 +8,7 @@ import Testimonials from './landingpage/Testimonials'
 
 export default function Index() {
   return (
-    <div className='relative overflow-hidden'>
+    <div className='min-h-screen relative overflow-hidden w-screen'>
         <Hero/>
         <Introduction/>
         <Products/>
