@@ -131,7 +131,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <Link to='https://phurpa-sherpa-portfolio.vercel.app' target='_blank' rel='noopener noreferrer' 
+                    <Link to='' target='_blank' rel='noopener noreferrer' 
                     title='Visit Me'
                     className='text-xs font-light text-(--white)/60 hover:text-white! transition-colors duration-300  2xl:text-sm'>By (Phurpa Sherpa)</Link>
                 </div>
