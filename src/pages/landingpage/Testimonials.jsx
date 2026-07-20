@@ -8,8 +8,8 @@ import { useMediaQuery } from 'react-responsive'
 const testimonialsData = [
   {
     id: "01",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
-    type: "video",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
+    type: "image",
     name: "Ankur Joshi",
     location: "Kathmandu",
     avatar: "/avatar1.png",
@@ -19,7 +19,7 @@ const testimonialsData = [
   },
   {
     id: "02",
-    file: "/g1.jpg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
     type: "image",
     name: "Priya Shrestha",
     location: "Lalitpur",
@@ -30,8 +30,8 @@ const testimonialsData = [
   },
   {
     id: "03",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
-    type: "video",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
+    type: "image",
     name: "Ramesh Gurung",
     location: "Pokhara",
     avatar: "/avatar3.png",
@@ -41,7 +41,7 @@ const testimonialsData = [
   },
   {
     id: "04",
-    file: "/g1.jpg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
     type: "image",
     name: "Sujata Rai",
     avatar: "/avatar1.png",
@@ -52,8 +52,8 @@ const testimonialsData = [
   },
   {
     id: "05",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
-    type: "video",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
+    type: "image",
     name: "Bikash Tamang",
     avatar: "/avatar2.png",
     location: "Bhaktapur",
@@ -63,7 +63,7 @@ const testimonialsData = [
   },
   {
     id: "06",
-    file: "g7.jpg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
     type: "image",
     name: "Hem Gurnng",
     avatar: "/avatar3.png",
@@ -74,8 +74,8 @@ const testimonialsData = [
   },
   {
     id: "07",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
-    type: "video",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
+    type: "image",
     name: "Sandeep Adhikari",
     avatar: "/avatar1.png",
     location: "Chitwan",
@@ -85,8 +85,8 @@ const testimonialsData = [
   },
   {
     id: "08",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video5.mp4",
-    type: "video",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g6.jpg?updatedAt=1784219149191",
+    type: "image",
     name: "Mina Lama",
     avatar: "/avatar2.png",
     location: "Hetauda",
@@ -96,7 +96,7 @@ const testimonialsData = [
   },
   {
     id: "09",
-    file: "/image1.jpeg",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g7.jpg?updatedAt=1784219151626",
     type: "image",
     avatar: "/avatar3.png",
     name: "Roshan KC",
@@ -107,8 +107,8 @@ const testimonialsData = [
   },
   {
     id: "10",
-    file: "https://ik.imagekit.io/k05httq0p/Pickle/video4.mp4",
-    type: "video",
+    file: "https://ik.imagekit.io/k05httq0p/Pickle/g5.png?updatedAt=1784219159096",
+    type: "image",
     name: "Sabina Thapa",
     avatar: "/avatar1.png",
     location: "Nepalgunj",

@@ -16,9 +16,9 @@ export default function Gallery() {
             </div>
             
             <div className='space-y-16'>
-                <GalleryCard left={false} source1={'/g1.jpg'} source2={'/g7.jpg'} image1='object-top' image2='object-top'/>
-                <GalleryCard left={true} source1={'/g5.png'} source2={'/g8.jpg'} image1='object-bottom 2xl:object-top' image2='object-center'/>
-                <GalleryCard left={false} source1={'/g6.jpg'} source2={'/image2.webp'} image1='object-center' image2='object-bottom'/>
+                <GalleryCard left={false} source1={'https://ik.imagekit.io/k05httq0p/Pickle/g5.png?updatedAt=1784219159096'} source2={'https://ik.imagekit.io/k05httq0p/Pickle/g1.jpg?updatedAt=1784219150321'} image1='object-top' image2='object-top'/>
+                <GalleryCard left={true} source1={'https://ik.imagekit.io/k05httq0p/Pickle/g7.jpg?updatedAt=1784219151626'} source2={'https://ik.imagekit.io/k05httq0p/Pickle/g1.jpg?updatedAt=1784219150321'} image1='object-bottom 2xl:object-top' image2='object-center'/>
+                <GalleryCard left={false} source1={'https://ik.imagekit.io/k05httq0p/Pickle/g1.jpg?updatedAt=1784219150321'} source2={'https://ik.imagekit.io/k05httq0p/Pickle/g7.jpg?updatedAt=1784219151626'} image1='object-center' image2='object-bottom'/>
             </div>
         </div>
     </div>

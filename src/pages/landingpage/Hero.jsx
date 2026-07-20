@@ -2,7 +2,6 @@ import CTAButton from '../../components/CTAButton'
 
 export default function Hero() {
 
-    console.log(window.innerWidth)
   return (
     <div className='relative '>
         {/* background image */}

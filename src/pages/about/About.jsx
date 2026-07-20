@@ -31,7 +31,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}>
-            <img src='/g8.jpg' alt='Traditional kitchen' className='w-full h-[400px] lg:h-[500px] object-cover rounded-2xl'/>
+            <img src='https://ik.imagekit.io/k05httq0p/Pickle/g5.png?updatedAt=1784219159096' alt='Traditional kitchen' className='w-full h-[400px] lg:h-[500px] object-cover rounded-2xl'/>
           </motion.div>
           
           <motion.div

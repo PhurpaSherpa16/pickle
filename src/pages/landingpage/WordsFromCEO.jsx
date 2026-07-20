@@ -7,7 +7,7 @@ export default function WordsFromCEO() {
     <div className='min-h-fit w-screen relative z-10 bottom-12'>
         <div className='flex h-full items-end md:items-center justify-center'>
             <div className='h-full w-full md:w-1/2'>
-                <img src="https://ik.imagekit.io/k05httq0p/Pickle/g5.png?updatedAt=1784219159096" alt="CEO Image" className='h-screen md:h-[80vh] lg:h-screen w-full object-cover object-center 
+                <img src="https://i.pinimg.com/736x/ec/3e/72/ec3e723c22531ee345441927e59e8577.jpg" alt="CEO Image" className='h-screen md:h-[80vh] lg:h-screen w-full object-cover object-center 
                 filter grayscale-100'/>
             </div>
             <div className='bg-(--black)/40 md:bg-transparent backdrop-blur-lg absolute mainDiv h-fit py-32 space-y-12 md:relative z-40 w-full md:w-1/2 flex items-center justify-center'>   

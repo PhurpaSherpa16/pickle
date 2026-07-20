@@ -109,7 +109,7 @@ export default function Footer() {
                     <div className='flex flex-col md:flex-row md:items-center justify-between'>
                         <Link to='/about' className='text-(--white) hover:text-(--white)!
                         hover:-translate-y-1 transition-all duration-200 ease-in-out hidden md:block'>Our Story</Link>
-                        <Link to='#gallery' className='text-(--white) hover:text-(--white)!
+                        <Link to='/#gallery' className='text-(--white) hover:text-(--white)!
                         hover:-translate-y-1 transition-all duration-200 ease-in-out hidden md:block'>Gallery</Link>
                         <CTAButton label='Order Now' className='bg-(--white) border-(--white)'
                         span='group-hover:text-(--white) text-(--orange)' className3='text-(--white)' className2='bg-(--orange)'/>
@@ -131,7 +131,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <Link to='' target='_blank' rel='noopener noreferrer' 
+                    <Link to='https://phurpa-sherpa-portfolio.vercel.app/' target='_blank' rel='noopener noreferrer' 
                     title='Visit Me'
                     className='text-xs font-light text-(--white)/60 hover:text-white! transition-colors duration-300  2xl:text-sm'>By (Phurpa Sherpa)</Link>
                 </div>
