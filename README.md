@@ -1,6 +1,6 @@
 # 🥒 Pickle
 
-A modern, premium e-commerce website for an authentic Nepali pickle brand. Built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, the project focuses on storytelling, premium product presentation, responsive layouts, and smooth user interactions.
+A modern, premium e-commerce website for an authentic Nepali pickle brand. Built with **React**, **Tailwind CSS**, and **Framer Motion**, the project focuses on storytelling, premium product presentation, responsive layouts, and smooth user interactions.
 
 > Designed and developed from research to implementation.
 
